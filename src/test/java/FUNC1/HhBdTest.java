@@ -3,6 +3,7 @@ package FUNC1;
 import core.SeleniumDataBaseTest;
 import helpers.Helper;
 import helpers.HelperDB;
+import io.qameta.allure.Description;
 import org.junit.Test;
 import pages.MainPage;
 
@@ -20,6 +21,7 @@ public class HhBdTest extends SeleniumDataBaseTest {
     private final String URL = "https://samara.hh.ru/";
 
     @Test
+    @Description("Сортировка вакансий")
     public void checkSortMoney() throws InterruptedException, SQLException {
         Map<String, Integer> vacansions = new MainPage(URL)
                 .confirmTown()

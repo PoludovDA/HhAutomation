@@ -4,6 +4,7 @@ import api.Specifications;
 import com.codeborne.selenide.WebDriverRunner;
 import core.BaseSeleniumTest;
 import helpers.Helper;
+import io.qameta.allure.Description;
 import io.restassured.path.json.JsonPath;
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,6 +32,7 @@ public class FindVacansionsTest extends BaseSeleniumTest {
     private final String API_URL = "https://api.hh.ru";
 
     @Test
+    @Description("Вакансий с зп более 90к большинство")
     public void checkVacMoreNinety() throws InterruptedException {
         ResultsPage resultsPage = new ResultsPage();
 
@@ -52,6 +54,7 @@ public class FindVacansionsTest extends BaseSeleniumTest {
     }
 
     @Test
+    @Description("Апи вакансий")
     public void checkApi() {
         Specifications.installSpecifications(Specifications.requestSpecification(API_URL),
                                             Specifications.responseSpecificationUnique(200));
@@ -86,6 +89,7 @@ public class FindVacansionsTest extends BaseSeleniumTest {
     }
 
     @Test
+    @Description("Тест БД")
     public void dbTest() {
         try {
             // Адрес нашей базы данных "tsn_pg_demo" на локальном компьютере (localhost)

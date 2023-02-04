@@ -2,6 +2,7 @@ package FUNC1;
 
 import api.ApiRequests;
 import api.Specifications;
+import io.qameta.allure.Description;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
@@ -19,6 +20,7 @@ public class MyApiTest {
     private final static String BASE_URL = "https://reqres.in/";
 
     @Test
+    @Description("Апи тест 1")
     public void unSuccessRegisterTest() {
 
         Map<String, Object> dataRegister = new HashMap<>();
@@ -35,6 +37,7 @@ public class MyApiTest {
     }
 
     @Test
+    @Description("Апи тест 2")
     public void checkAvatars() {
         List<Map<String, Object>> responseMapList = ApiRequests.responseMapList(
                 "get",
@@ -46,6 +49,7 @@ public class MyApiTest {
     }
 
     @Test
+    @Description("Апи тест 3")
     public void deleteUserTest() {
         Map<String, Object> responseMap = ApiRequests.responseMap(
                 "delete",
